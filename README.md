@@ -1,39 +1,38 @@
-# Full Next.js example
+# Syntax
 
-This is a full-featured boilerplate for a creating a documentation website using Markdoc and Next.js.
+Syntax is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
 
-<img width="2032" alt="image" src="https://user-images.githubusercontent.com/62121649/174916143-16f18270-0463-402c-8b48-33c627ea7a7e.png">
+## Getting started
 
-## Setup
-
-First, clone this repo and install the dependencies required:
+To get started with this template, first install the npm dependencies:
 
 ```bash
 npm install
-# or
-yarn install
+cp .env.example .env.local
 ```
 
-Then, run the development server:
+Next, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-You can start editing the page by modifying `index.md`. The page auto-updates as you edit the file.
+## Customizing
 
-## Deploy
+You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
-The quickest way to deploy your own version of this boilerplate is by deploying it with [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com/) by clicking one of the buttons below.
+## License
 
-### Deploy with Vercel
+This site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/next.js-starter)
+## Learn more
 
-### Deploy to Netlify
+To learn more about the technologies used in this site template, see the following resources:
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/next.js-starter)
+- [Tailwind CSS](https://tailwindcss.com/docs) - the official Tailwind CSS documentation
+- [Next.js](https://nextjs.org/docs) - the official Next.js documentation
+- [Headless UI](https://headlessui.dev) - the official Headless UI documentation
+- [Markdoc](https://markdoc.io) - the official Markdoc documentation
+- [DocSearch](https://docsearch.algolia.com) - the official DocSearch documentation
