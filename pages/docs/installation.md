@@ -20,17 +20,15 @@ use Alfred\Workflows\Workflow;
 
 $workflow = new Workflow();
 
-$workflow->items()
-          ->add()
+$workflow->item()
           ->title('Bob')
           ->subtitle('Head Burger Chef')
           ->arg('bob');
 
 
-$workflow->items()
-          ->add()
+$workflow->item()
           ->title('Linda')
-          ->subtitle('Wife')
+          ->subtitle('Restaurant Manager')
           ->arg('linda');
 
 $workflow->output();

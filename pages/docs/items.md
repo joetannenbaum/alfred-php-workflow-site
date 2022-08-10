@@ -21,7 +21,7 @@ $workflow->item()
 
 $workflow->item()
          ->title('Linda')
-         ->subtitle('Wife')
+         ->subtitle('Restaurant Manager')
          ->icon('images/linda.png');
 
 $workflow->item()
