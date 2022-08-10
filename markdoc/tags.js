@@ -1,4 +1,5 @@
 import { Callout } from '@/components/Callout'
+import { Badge, Badges } from '@/components/Badge'
 import { QuickLink, QuickLinks } from '@/components/QuickLinks'
 
 const tags = {
@@ -13,6 +14,20 @@ const tags = {
       },
     },
     render: Callout,
+  },
+  badge: {
+    attributes: {
+      title: { type: String },
+      type: {
+        type: String,
+        default: 'info',
+        matches: ['info', 'required', 'recommended'],
+      },
+    },
+    render: Badge,
+  },
+  badges: {
+    render: Badges,
   },
   figure: {
     selfClosing: true,
