@@ -32,6 +32,8 @@ const navigation = [
     title: 'Items',
     links: [
       { title: 'Basic Usage', href: '/docs/items' },
+      { title: 'Sorting', href: '/docs/items/sorting' },
+      { title: 'Manually Filtering', href: '/docs/items/filtering' },
       { title: 'UID', href: '/docs/items/uid' },
       { title: 'Title', href: '/docs/items/title' },
       { title: 'Subtitle', href: '/docs/items/subtitle' },
