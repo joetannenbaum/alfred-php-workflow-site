@@ -3,7 +3,7 @@ title: Environment
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
-You can easily access environment variables within your workflow using the `env` method:
+To access environment variables within your workflow using the `env` method:
 
 ```php
 $workflow->env('HOME');
@@ -22,11 +22,17 @@ Calling `env` without any arguments will return all of the environment variables
 $workflow->env();
 ```
 
-You can also easily access Alfred-specific environment variables via the `alfred` method:
+To access Alfred-specific environment variables use the `alfred` method:
 
 ```php
 $workflow->alfred()->get('theme_background'); // rgba(0,0,0,0.50)
 $workflow->alfred()->get('version'); // 5.0.1
+```
+
+Calling `get` without any arguments will return all of the Alfred environment variables available to your workflow as an associative array:
+
+```php
+$workflow->alfred()->get();
 ```
 
 For convenience, helper methods are supplied for common Alfred environment variables:
