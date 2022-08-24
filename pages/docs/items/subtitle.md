@@ -1,10 +1,10 @@
 ---
 title: Subtitle
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: The subtitle displayed in the result row.
 ---
 
 The subtitle displayed in the result row.
 
 ```php
-$workflow->item()->subtitle('bob-belcher');
+$workflow->item()->title('Bob')->subtitle('Burger Flipper');
 ```

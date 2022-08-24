@@ -1,15 +1,13 @@
 ---
 title: Items
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Add items to your Alfred workflow.
 ---
 
-A Script Filter is required to return items. Each item describes a result row displayed in Alfred. Three of the most commonly used properties of an item are the title, subtitle, and icon. But there's so much more.
+A Script Filter is required to return items. Each item describes a result row displayed in Alfred. Three of the most commonly used properties of an item are the [`title`](items/title), [`subtitle`](items/subtitle), and [`icon`](items/icon). But there's so much more.
 
 The Script Filter input is one of the most powerful workflow objects, allowing you to populate Alfred's results with your own custom items.
 
----
-
-## Adding a Basic Item
+## Adding Basic Items
 
 ```php
 $workflow = new Workflow();
@@ -38,10 +36,12 @@ $workflow->item()
          ->title('Louise')
          ->subtitle('Trouble Maker')
          ->icon('images/louise.png');
+
+$workflow->output();
 ```
 
 {% figure src="/images/basic-usage.png" alt="Basic Usage" /%}
 
-<!-- Maybe offer a complex example of building out an item based on conditionals? -->
-
-<!-- Mention about chainable methods, they always return Item -->
+{% callout title="FYI" %}
+All methods off of the `item` method are chainable, they all return `Alfred\Workflows\Item`.
+{% /callout %}

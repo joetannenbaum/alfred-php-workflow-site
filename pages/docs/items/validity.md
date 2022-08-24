@@ -1,15 +1,15 @@
 ---
 title: Validity
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Mark an Alfred workflow item as valid or invalid.
 ---
-<!-- TODO: Human this. -->
 
-If an item is valid then Alfred will action this item when the user presses return. If the item is not valid, Alfred will do nothing. This allows you to intelligently prevent Alfred from actioning a result based on the current {query} passed into your script.
+By default, all items returned are considered valid unless you specify otherwise. If an item is valid, Alfred will continue with the workflow and pass along any arguments or variables associated with the item.
 
-If you exclude the valid attribute, Alfred assumes that your item is valid.
+If an item is invalid, Alfred will do nothing. This allows you to decide based on the user's query whether or not you'd like to let the workflow continue.
 
 ```php
-// Mark an item as valid (default)
+// Mark an item as valid.
+// This is the default, you should rarely need to do this.
 $workflow->item->valid();
 
 // Mark an item as invalid

@@ -1,6 +1,6 @@
 ---
 title: Data
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Writing and reading data for your Alfred workflow.
 ---
 
 {% callout type="warning" title="Heads up" %}
@@ -11,7 +11,7 @@ To set the Bundle ID: In Alfred > Workflows, double-click your workflow in the l
 
 If you need to cache non-volatile data for your workflow, you can easily do so via the `data` method.
 
-This method reads and writes to a file called `data.json` in the Alfred-recommended path on the user's computer (`~/Library/Application Support/Alfred/Workflow Data/[bundle id]`).
+This method reads and writes to a file called `data.json` within the Alfred-recommended directory on the user's computer (`~/Library/Application Support/Alfred/Workflow Data/[bundle id]`).
 
 ```php
 $workflow->data()->writeJson([
@@ -38,11 +38,13 @@ Any argument you pass into the `writeJson` method will be JSON encoded and writt
 $data = $workflow->data()->readJson(null, false);
 ```
 
-To see the default data path, you can use the `path` method:
+To get the default data path, you can use the `path` method:
 
 ```php
 $workflow->data()->path();
 ```
+
+## Custom Data File
 
 By default, the filename is `data.json`, but you can manage multiple data files by passing in a different filename when reading and writing:
 
@@ -53,7 +55,7 @@ $workflow->data()->readJson('secondary.json');
 $workflow->data()->path('secondary.json');
 ```
 
-If you need to read or write non-JSON data, you can easily do so:
+## Working with non-JSON Data
 
 ```php
 $workflow->data()->write('Remember this.');

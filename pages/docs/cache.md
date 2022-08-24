@@ -1,6 +1,6 @@
 ---
 title: Cache
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Caching data within your Alfred workflow.
 ---
 
 {% callout type="warning" title="Heads up" %}
@@ -11,7 +11,7 @@ To set the Bundle ID: In Alfred > Workflows, double-click your workflow in the l
 
 If you need to cache volatile data for your workflow, you can easily do so via the `cache` method.
 
-This method reads and writes to a file called `cache.json` in the Alfred-recommended path on the user's computer (`~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/[bundle id]`).
+This method reads and writes to a file called `cache.json` witin the Alfred-recommended directory on the user's computer (`~/Library/Caches/com.runningwithcrayons.Alfred/Workflow Data/[bundle id]`).
 
 ```php
 $workflow->cache()->writeJson([
@@ -30,7 +30,7 @@ $workflow->cache()->writeJson([
 $data = $workflow->cache()->readJson();
 ```
 
-Any argument you pass into the `writeJson` method will be JSON encoded and written to the default cache path. Each time you call `writeJson` you are over-writing the cache file.
+Any argument you pass into the `writeJson` method will be JSON encoded and written to the default cache path. Each time you call `writeJson` you are over-writing the existing cache file.
 
 `readJson` will read in the file from the default cache path and decode the JSON as an associative array. To read the data as an object:
 
@@ -38,11 +38,13 @@ Any argument you pass into the `writeJson` method will be JSON encoded and writt
 $data = $workflow->cache()->readJson(null, false);
 ```
 
-To see the default cache path, you can use the `path` method:
+To get the default cache path, you can use the `path` method:
 
 ```php
 $workflow->cache()->path();
 ```
+
+## Custom Cache File
 
 By default, the filename is `cache.json`, but you can manage multiple caches by passing in a different filename when reading and writing:
 
@@ -53,7 +55,7 @@ $workflow->cache()->readJson('secondary.json');
 $workflow->cache()->path('secondary.json');
 ```
 
-If you need to read or write non-JSON data, you can easily do so:
+## Working with non-JSON Data
 
 ```php
 $workflow->cache()->write('Remember this for a bit.');

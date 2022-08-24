@@ -1,25 +1,9 @@
 ---
 title: Handling Modifier Keys
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Handling modifier keys for your Alfred workflow items.
 ---
 
-The mod element gives you control over how the modifier keys react. You can now define the valid attribute to mark if the result is valid based on the modifier selection and set a different arg to be passed out if actioned with the modifier.
-
----
-
-{% badges %}
-    {% badge title="> Alfred 3.4.1" /%}
-{% /badges %}
-
-You can define an icon and variables for each object in the mods object.
-
----
-
-It is also possible to add a variables object for each mod in the item object, allowing you to differentiate when a mod result is selected within your workflow. Note that when setting a variables object on a mod, this replaces the item variables, and doesn't inherit from them, allowing maximum flexibility.
-
-When a mod doesn't contain a variables object, it will assume the item variables. To prevent this, add an empty variables object: "variables": {}.
-
-<!-- TODO: Implement this empty variables logic -->
+You can specify how modifier keys (`cmd` (⌘), `alt` (⌥), `ctrl` (⌃), `shift` (⇧), `fn`) change how your items appears and behaves within your workflow. For example, you could change the `subtitle`, the `icon`, the `arguments`, etc based on which modifier key the user is pressing when your item is selected.
 
 ```php
 use Alfred\Workflows\ItemParam\Mod;
@@ -61,13 +45,68 @@ $workflow->item()->cmd(function(Mod $mod) {
 });
 ```
 
+You can also specify a combination of modifier keys:
+
+```php
+use Alfred\Workflows\ItemParam\Mod;
+
+// When the user press shift + cmd
+$workflow->item()->mod(
+    [Mod::KEY_SHIFT, Mod::MOD_CMD],
+    function(Mod $mod) {
+        // ...
+    }
+);
+```
+
 Within the `Mod` builder, you have have a subset of the `Item` methods available to you:
 
 - `subtitle`
 - `arg`
+- `argument`
 - `valid`
 - `invalid`
+
+{% badges %}
+    {% badge title="> Alfred 3.4.1" /%}
+{% /badges %}
+
 - `variable`
+- `variables`
 - `icon`
-- `iconFromFile`
-- `iconFromFileType`
+- `iconForFilePath`
+- `iconForFileType`
+
+## Modifer Key Variables
+
+When setting variables with a modifier key, it will completely override the `item` variables, it does not inherit from them:
+
+```php
+use Alfred\Workflows\ItemParam\Mod;
+
+// If `cmd` is used, variables will be {"job": "burger_flipper"}
+$workflow->item()
+            ->title('The One Yam Band Burger')
+            ->variable('burger_type', 'yam')
+            ->cmd(function(Mod $mod) {
+                $mod->subtitle('Copy "Do Something Different"')
+                    ->variable('job', 'burger_flipper');
+            });
+
+
+```
+
+When a modifier key doesn't contain variables, it will assume the `item` variables. To prevent this, you can specify that the variables should in fact be empty:
+
+```php
+$workflow->item()
+            ->title('The One Yam Band Burger')
+            ->variable('burger_type', 'yam')
+            ->cmd(function(Mod $mod) {
+                $mod->subtitle('Copy "Do Something Different"')
+                    ->variable(null);
+                    // or
+                    // ->variables([]);
+            });
+
+```

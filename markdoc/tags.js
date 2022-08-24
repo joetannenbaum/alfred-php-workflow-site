@@ -39,7 +39,7 @@ const tags = {
     render: ({ src, alt = '', caption }) => (
       <figure>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} className="rounded-xl" />
         <figcaption>{caption}</figcaption>
       </figure>
     ),

@@ -1,6 +1,6 @@
 ---
 title: Title
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: The title displayed in the result row.
 ---
 
 {% badges %}

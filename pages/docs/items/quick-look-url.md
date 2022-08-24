@@ -8,5 +8,5 @@ A Quick Look URL which will be visible if the user uses the Quick Look feature w
 If absent, Alfred will attempt to use the arg as the quicklook URL.
 
 ```php
-$workflow->item()->quickLookUrl('~/Desktop/say-it-aint-cilantro burger.jpg');
+$workflow->item()->quickLookUrl('~/Desktop/say-it-aint-cilantro-burger.jpg');
 ```

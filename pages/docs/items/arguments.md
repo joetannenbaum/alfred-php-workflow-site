@@ -1,6 +1,6 @@
 ---
 title: Passing Arguments
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Passing arguments from the selected Alfred workflow item.
 ---
 
 {% badges %}
@@ -27,5 +27,5 @@ $workflow->item()->arg([
 ```
 
 {% callout title="Heads up" %}
-    While passing an argument is optional, it's highly recommended that do. If excluded, you won't know which result item the user has selected.
+    While passing an argument is optional, it's highly recommended that you do. If excluded, you won't know which item the user has selected.
 {% /callout %}

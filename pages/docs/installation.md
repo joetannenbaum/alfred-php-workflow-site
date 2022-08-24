@@ -14,8 +14,6 @@ composer require joetannenbaum/alfred-workflow
 ## Basic usage
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
-
 use Alfred\Workflows\Workflow;
 
 $workflow = new Workflow();

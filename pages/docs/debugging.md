@@ -1,6 +1,6 @@
 ---
 title: Debugging
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Debugging your Alfred workflow.
 ---
 
 Debugging a workflow is best done with Alfred's [Workflow Debugger](https://www.alfredapp.com/help/workflows/advanced/debugger/). You can tell when the Debugger is active using the `alfred` `debugging` method:
@@ -11,7 +11,7 @@ if ($workflow->alfred()->debugging()) {
 }
 ```
 
-If you want to log data to the Workflow Debugger, you can use the `logger` method. This will only print logs when the Workflow Debugger is open:
+If you want to log information to the Workflow Debugger, you can use the `logger` method. This method will only print logs when the Workflow Debugger is open:
 
 ```php
 $workflow->logger()->info('HOME: ' . $workflow->env('HOME'));
@@ -22,8 +22,8 @@ $workflow->logger()->info(['Tina', 'Gene', 'Louise']);
 In the Workflow Debugger, this will show up as:
 
 ```log
-[alfred] 2022-08-10 16:51:04 HOME: /Users/me
-[alfred] 2022-08-10 16:51:04 ["Tina","Gene","Louise"]
+[example-workflow] 2022-08-10 16:51:04 HOME: /Users/me
+[example-workflow] 2022-08-10 16:51:04 ["Tina","Gene","Louise"]
 ```
 
 By default, logs are prefixed with `[your workflow name]`, but you can set your own prefix:
