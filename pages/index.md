@@ -1,7 +1,7 @@
 ---
 title: Getting started
-pageTitle: CacheAdvance - Never miss the cache again.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+pageTitle: Alfred PHP Workflows, Made Easy
+description: The Alfred Workflows library makes it trivial to implement a custom PHP Script Filter in your workflow.
 ---
 
 The requirements for the Alfred PHP Workflow library are:
