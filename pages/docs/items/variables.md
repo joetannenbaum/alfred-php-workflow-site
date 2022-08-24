@@ -7,16 +7,6 @@ Variables passed out of the script filter will remain accessible throughout the 
 
 In addition, they are passed back in when the script reruns within the same session. This can be used for managing state between runs as the user types input or when the script is set to re-run after an interval.
 
----
-
-{% badges %}
-    {% badge title="> Alfred 3.4.1" /%}
-{% /badges %}
-
-If an item with a variable is selected within the result list, this variable will override any variable of the same name within the session.
-
----
-
 ```php
 $workflow->variable('condiment', 'ketchup');
 ```
@@ -34,3 +24,9 @@ $workflow->variables([
     'condiment' => 'ketchup',
 ]);
 ```
+
+{% badges %}
+    {% badge title="> Alfred 3.4.1" /%}
+{% /badges %}
+
+If an item with a variable is selected within the result list, this variable will override any variable of the same name within the session.

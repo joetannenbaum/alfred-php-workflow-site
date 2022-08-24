@@ -1,6 +1,6 @@
 ---
 title: Manually Filtering
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Manually filtering your Alfred workflow items.
 ---
 
 To filter your `items` programatically via the `title` property (case insensitive):

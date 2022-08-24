@@ -51,7 +51,7 @@ const navigation = [
         href: '/docs/items/universal-action',
       },
       {
-        title: 'Text (Copy and Large Type)',
+        title: 'Specifying Copy and Large Type Text',
         href: '/docs/items/text',
       },
       {
@@ -62,7 +62,7 @@ const navigation = [
         title: 'Variables',
         href: '/docs/items/variables',
       },
-      { title: 'Sorting', href: '/docs/items/sorting' },
+      { title: 'Manually Sorting', href: '/docs/items/sorting' },
       { title: 'Manually Filtering', href: '/docs/items/filtering' },
     ],
   },

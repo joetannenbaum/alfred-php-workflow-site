@@ -1,6 +1,6 @@
 ---
-title: Sorting
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Manually Sorting
+description: Sorting your Alfred workflow items manually.
 ---
 
 If you would like to sort your `items` by the `title` property (case sensitive), you can simply call:

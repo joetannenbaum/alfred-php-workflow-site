@@ -1,12 +1,13 @@
 ---
 title: Quick Look URL
-description: Quidem magni aut exercitationem maxime rerum eos.
+description: Specifying the quick look URL for your Alfred workflow item.
 ---
 
-A Quick Look URL which will be visible if the user uses the Quick Look feature within Alfred (tapping shift, or ⌘Y). Note that quicklookurl will also accept a file path, both absolute and relative to home using ~/.
-
-If absent, Alfred will attempt to use the arg as the quicklook URL.
+If the user uses the presses `shift` or `⌘Y` on the selected item, Alfred opens the Quick Look. You can specify the URL or file that Alfred should open in Quick Look for your item by using the `quickLookUrl` method:
 
 ```php
+$workflow->item()->quickLookUrl('https://www.alfredapp.com/');
 $workflow->item()->quickLookUrl('~/Desktop/say-it-aint-cilantro-burger.jpg');
 ```
+
+If absent, Alfred will attempt to use the `arg` as the quicklook URL.

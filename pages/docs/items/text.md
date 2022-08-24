@@ -1,21 +1,30 @@
 ---
-title: Text (Copy and Large Type)
-description: Quidem magni aut exercitationem maxime rerum eos.
+title: Specifying Copy and Large Type Text
+description: Specify copy and large type text for your Alfred workflow item.
 ---
 
-The text element defines the text the user will get when copying the selected result row with ⌘C or displaying large type with ⌘L.
-
-If these are not defined, you will inherit Alfred's standard behaviour where the arg is copied to the Clipboard or used for Large Type.
+To specify what Alfred should display when the user displays the result in Large Text by typing `⌘L`:
 
 ```php
 use Alfred\Workflows\ItemParam\Text;
 
-$workflow->item()->text("Come eat at Bob's!", Text::TYPE_LARGE_TYPE);
-$workflow->item()->text("Come eat at Bob's!", Text::TYPE_COPY);
+$workflow->item()->largeType("Eat at Bob's!");
 
 // or
 
-$workflow->item()->largeType("Come eat at Bob's!");
-$workflow->item()->copy("Come eat at Bob's!");
-
+$workflow->item()->text("Eat at Bob's!", Text::TYPE_LARGE_TYPE);
 ```
+
+To specify what Alfred should copy when the user types `⌘C` on the selected item:
+
+```php
+use Alfred\Workflows\ItemParam\Text;
+
+$workflow->item()->copy("Eat at Bob's!");
+
+// or
+
+$workflow->item()->text("Eat at Bob's!", Text::TYPE_COPY);
+```
+
+If these are not defined, the `arg` for the item is copied to the Clipboard or used for Large Type.
