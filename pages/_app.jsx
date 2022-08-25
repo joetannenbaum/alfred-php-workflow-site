@@ -91,7 +91,7 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/images/logo.svg" type="image/svg+xml" />
         <meta
           property="og:image"
-          content="https://www.alfredphpworkflows.com/image/share-image.png"
+          content="https://www.alfredphpworkflows.com/images/share-image.png"
         />
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
