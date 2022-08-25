@@ -52,25 +52,6 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 }
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter()
-
-  useEffect(() => {
-    Fathom.load('RJDERCQS', {
-      includedDomains: ['www.alfredphpworkflows.com'],
-    })
-
-    function onRouteChangeComplete() {
-      Fathom.trackPageview()
-    }
-    // Record a pageview when route changes
-    router.events.on('routeChangeComplete', onRouteChangeComplete)
-
-    // Unassign event listener
-    return () => {
-      router.events.off('routeChangeComplete', onRouteChangeComplete)
-    }
-  }, [])
-
   let title = pageProps.markdoc?.frontmatter.title
 
   let pageTitle =
