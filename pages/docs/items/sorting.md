@@ -12,6 +12,8 @@ $workflow->items()->sort();
 To sort them by `title` descending:
 
 ```php
+use Alfred\Workflows\Items;
+
 $workflow->items()->sort('title', Items::SORT_DESC);
 ```
 

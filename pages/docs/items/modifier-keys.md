@@ -17,7 +17,7 @@ $workflow->item()->title('The One Yam Band Burger')->mod(
 $workflow->item()
             ->title('The One Yam Band Burger')
             ->cmd(function(Mod $mod) {
-                $mod->subtitle('Copy "Do Something Different"');
+                $mod->subtitle('Copy "The One Yam Band Burger"');
             });
 ```
 
