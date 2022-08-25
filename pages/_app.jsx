@@ -93,6 +93,18 @@ export default function App({ Component, pageProps }) {
           property="og:image"
           content="https://www.alfredphpworkflows.com/images/share-image.png"
         />
+        <meta
+          property="og:image:alt"
+          content="Logo of elephant with bowler hat, text that reads 'Alfred PHP Workflows, Made Easy'"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.alfredphpworkflows.com" />
+        <meta property="og:title" content={pageTitle} />
+        {description && (
+          <meta property="og:description" content={description} />
+        )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@joetannenbaum" />
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
