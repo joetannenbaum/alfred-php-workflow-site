@@ -5,6 +5,8 @@ import { Layout } from '@/components/Layout'
 
 import 'focus-visible'
 import '@/styles/tailwind.css'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 function getNodeText(node) {
   let text = ''
@@ -49,6 +51,25 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 }
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+
+  useEffect(() => {
+    Fathom.load('RJDERCQS', {
+      includedDomains: ['www.alfredphpworkflows.com'],
+    })
+
+    function onRouteChangeComplete() {
+      Fathom.trackPageview()
+    }
+    // Record a pageview when route changes
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+
+    // Unassign event listener
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
+    }
+  }, [])
+
   let title = pageProps.markdoc?.frontmatter.title
 
   let pageTitle =
