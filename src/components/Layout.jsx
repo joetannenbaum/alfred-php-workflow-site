@@ -29,6 +29,10 @@ const navigation = [
       { title: 'Re-Run Automatically', href: '/docs/rerun' },
       { title: 'Arguments', href: '/docs/arguments' },
       { title: 'Variables', href: '/docs/variables' },
+      {
+        title: 'Setting Args and Vars from a Script Action',
+        href: '/docs/set-from-run-script',
+      },
       { title: 'Outputting', href: '/docs/output' },
       { title: 'Debugging', href: '/docs/debugging' },
     ],
